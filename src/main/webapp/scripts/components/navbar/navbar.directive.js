@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .directive('activeMenu', function($translate, $locale, tmhDynamicLocale) {
         return {
             restrict: 'A',

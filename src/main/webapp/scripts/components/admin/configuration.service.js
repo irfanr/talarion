@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .factory('ConfigurationService', function ($rootScope, $filter, $http) {
         return {
             get: function() {

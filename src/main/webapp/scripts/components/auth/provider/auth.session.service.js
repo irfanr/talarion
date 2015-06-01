@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .factory('AuthServerProvider', function loginService($http, localStorageService, $window) {
         return {
             login: function(credentials) {

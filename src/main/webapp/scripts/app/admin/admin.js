@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('admin', {

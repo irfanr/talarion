@@ -2,7 +2,7 @@
 
 describe('Controllers Tests ', function () {
 
-    beforeEach(module('punicApp'));
+    beforeEach(module('talarionApp'));
 
     var $scope, q, Principal, Auth;
 

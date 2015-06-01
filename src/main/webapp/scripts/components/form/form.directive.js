@@ -1,7 +1,7 @@
 /* globals $ */
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .directive('showValidation', function() {
         return {
             restrict: 'A',

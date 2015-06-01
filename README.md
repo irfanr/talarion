@@ -1,2 +1,2 @@
-README for punic
+README for talarion
 ==========================

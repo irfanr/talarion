@@ -2,7 +2,7 @@
 
 describe('Directive Tests ', function () {
 
-    beforeEach(module('punicApp'));
+    beforeEach(module('talarionApp'));
 
     var elm, scope, $httpBackend;
 

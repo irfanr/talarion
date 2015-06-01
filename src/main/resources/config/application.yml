@@ -21,12 +21,12 @@ mail:
     protocol: smtp
     tls: false
     auth: false
-    from: punic@localhost
+    from: talarion@localhost
 
 
 swagger:
-    title: punic API
-    description: punic applications and beyond!
+    title: talarion API
+    description: talarion applications and beyond!
     termsOfServiceUrl: http://jhipster.github.io/
     contact:
     license: Apache 2.0

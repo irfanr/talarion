@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .controller('AuthorDetailController', function ($scope, $stateParams, Author, Book) {
         $scope.author = {};
         $scope.load = function (id) {

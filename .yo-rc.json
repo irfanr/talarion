@@ -1,8 +1,8 @@
 {
   "generator-jhipster": {
-    "baseName": "punic",
-    "packageName": "com.mascova.punic",
-    "packageFolder": "com/mascova/punic",
+    "baseName": "talarion",
+    "packageName": "com.mascova.talarion",
+    "packageFolder": "com/mascova/talarion",
     "authenticationType": "session",
     "hibernateCache": "no",
     "clusteredHttpSession": "no",

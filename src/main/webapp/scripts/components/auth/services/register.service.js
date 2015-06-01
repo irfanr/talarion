@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .factory('Register', function ($resource) {
         return $resource('api/register', {}, {
         });

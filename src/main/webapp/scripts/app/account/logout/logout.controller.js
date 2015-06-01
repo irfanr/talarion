@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('punicApp')
+angular.module('talarionApp')
     .controller('LogoutController', function (Auth) {
         Auth.logout();
     });

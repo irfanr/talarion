@@ -1,7 +1,7 @@
 {
-  "name": "punic",
+  "name": "talarion",
   "version": "0.0.0",
-  "description": "Description for punic",
+  "description": "Description for talarion",
   "private": true,
   "dependencies": {
   },

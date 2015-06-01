@@ -27,7 +27,7 @@
     </appender>
 -->
 
-    <logger name="com.mascova.punic" level="${logback.loglevel}"/>
+    <logger name="com.mascova.talarion" level="${logback.loglevel}"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>
