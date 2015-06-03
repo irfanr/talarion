@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/admin/health/health.html',
+                        templateUrl: 'scripts2/app/admin/health/health.html',
                         controller: 'HealthController'
                     }
                 },

@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/admin/metrics/metrics.html',
+                        templateUrl: 'scripts2/app/admin/metrics/metrics.html',
                         controller: 'MetricsController'
                     }
                 },

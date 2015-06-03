@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/account/login/login.html',
+                        templateUrl: 'scripts2/app/account/login/login.html',
                         controller: 'LoginController'
                     }
                 },

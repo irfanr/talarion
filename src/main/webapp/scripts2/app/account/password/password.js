@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/account/password/password.html',
+                        templateUrl: 'scripts2/app/account/password/password.html',
                         controller: 'PasswordController'
                     }
                 },

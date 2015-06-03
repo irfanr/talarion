@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/account/activate/activate.html',
+                        templateUrl: 'scripts2/app/account/activate/activate.html',
                         controller: 'ActivationController'
                     }
                 },

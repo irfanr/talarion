@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/error/error.html'
+                        templateUrl: 'scripts2/app/error/error.html'
                     }
                 },
                 resolve: {
@@ -30,7 +30,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/error/accessdenied.html'
+                        templateUrl: 'scripts2/app/error/accessdenied.html'
                     }
                 },
                 resolve: {

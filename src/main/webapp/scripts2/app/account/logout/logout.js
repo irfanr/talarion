@@ -11,7 +11,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/main/main.html',
+                        templateUrl: 'scripts2/app/main/main.html',
                         controller: 'LogoutController'
                     }
                 }

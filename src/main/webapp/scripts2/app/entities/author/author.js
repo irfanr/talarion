@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/entities/author/authors.html',
+                        templateUrl: 'scripts2/app/entities/author/authors.html',
                         controller: 'AuthorController'
                     }
                 },
@@ -32,7 +32,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/entities/author/author-detail.html',
+                        templateUrl: 'scripts2/app/entities/author/author-detail.html',
                         controller: 'AuthorDetailController'
                     }
                 },

@@ -12,7 +12,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/admin/docs/docs.html'
+                        templateUrl: 'scripts2/app/admin/docs/docs.html'
                     }
                 }
             });

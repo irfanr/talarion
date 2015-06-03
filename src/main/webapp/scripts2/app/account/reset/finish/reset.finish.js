@@ -11,7 +11,7 @@ angular.module('talarionApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/account/reset/finish/reset.finish.html',
+                        templateUrl: 'scripts2/app/account/reset/finish/reset.finish.html',
                         controller: 'ResetFinishController'
                     }
                 },
