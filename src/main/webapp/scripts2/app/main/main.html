@@ -1,28 +1,58 @@
-<div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1 translate="main.title">Welcome!</h1>
-            <p class="lead" translate="main.subtitle">This is your homepage</p>
-
-            <div ng-switch="isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true"
-                     translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
-                    You are logged in as user "Admin".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated">
-                    If you want to <a href="#/login">authenticate</a>, you can try the default login="admin" and
-                    password="admin".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
-                    Don't have an account? <a href=\"#/register\">Register</a>
-                </div>
-            </div>
-
-        </div>
+<!-- Start page header -->
+<div class="header-content" ng-cloak>
+    <h2>
+        <i class="fa fa-file-o"></i>Welcome Page
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Layouts</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Welcome Page</li>
+        </ol>
     </div>
-</div>
+</div><!-- /.header-content -->
+<!--/ End page header -->
+<!-- Start body content -->
+<div class="body-content animated fadeIn" ng-cloak>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel rounded shadow">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Welcome!</h3>
+                </div><!-- /.panel-heading -->
+                <div class="panel-body">
+                    <h1 translate="main.title">Welcome!</h1>
+                    <p class="lead" translate="main.subtitle">This is your homepage</p>
+                    <div ng-switch="isAuthenticated()">
+                        <div class="alert alert-success" ng-switch-when="true"
+                            translate-values="{username: '{{account.login}}'}" translate="main.logged.message">
+                            You are logged in as user "Admin".
+                        </div>
+                        <div class="alert alert-warning" ng-switch-when="false"
+                            translate="global.messages.info.authenticated">
+                            If you want to
+                            <a href="#/login">authenticate</a>, you can try the default login="admin" and
+                            password="admin".
+                        </div>
+                        <div class="alert alert-warning" ng-switch-when="false"
+                            translate="global.messages.info.register">
+                            Don't have an account?
+                            <a href=\"#/register\">Register</a>
+                        </div>
+                    </div>
+                </div><!-- /.panel-body -->
+            </div><!-- /.panel -->
+        </div>
+    </div><!-- /.row -->
+</div><!-- /.body-content -->
+<!--/ End body content -->
+<!-- Start footer content -->
+<footer class="footer-content">
+    2014 - 2015 &copy; Blankon Admin. Created by
+    <a href="http://djavaui.com/" target="_blank">Djava UI</a>, Yogyakarta ID
+    <span class="pull-right">0.01 GB(0%) of 15 GB used</span>
+</footer><!-- /.footer-content -->
+<!--/ End footer content -->
