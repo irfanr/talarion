@@ -83,6 +83,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
     SpringLiquibase liquibase = new SpringLiquibase();
     liquibase.setDataSource(dataSource);
     liquibase.setChangeLog("classpath:config/liquibase/master.xml");
+    // liquibase.setDropFirst(true);
     liquibase.setContexts("development, production");
     if (env.acceptsProfiles(Constants.SPRING_PROFILE_FAST)) {
       if ("org.h2.jdbcx.JdbcDataSource".equals(propertyResolver.getProperty("dataSourceClassName"))) {
@@ -95,8 +96,15 @@ public class DatabaseConfiguration implements EnvironmentAware {
         liquibase.setShouldRun(false);
       }
     } else {
-      log.debug("Configuring Liquibase");
+      if (!env.acceptsProfiles(Constants.SPRING_PROFILE_LIQUIBASE)) {
+        liquibase.setShouldRun(false);
+      } else {
+        liquibase.setDropFirst(true);
+        log.debug("Configuring Liquibase");
+      }
+
     }
+
     return liquibase;
   }
 
