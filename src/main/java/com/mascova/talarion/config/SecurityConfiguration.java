@@ -130,6 +130,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api-docs/**").hasAuthority(AuthoritiesConstants.ADMIN)
             .antMatchers("/protected/**").authenticated();
 
+          if (env.acceptsProfiles(Constants.SPRING_PROFILE_DEVELOPMENT)) {
+            // Disabling CSRF for development
+            http.csrf().ignoringAntMatchers("/api/**");
+          }
     }
 
     @Bean
