@@ -14,6 +14,8 @@ public final class Constants {
   public static final String SPRING_PROFILE_CLOUD = "cloud";
   public static final String SPRING_PROFILE_LIQUIBASE = "liquibase";
   public static final String SPRING_PROFILE_SWAGGER = "swagger";
+  public static final String SPRING_PROFILE_METRICS = "metrics";
+  public static final String SPRING_PROFILE_ASYNC = "async";
   public static final String SYSTEM_ACCOUNT = "system";
 
 }

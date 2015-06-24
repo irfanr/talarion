@@ -22,7 +22,7 @@ import com.mascova.talarion.async.ExceptionHandlingAsyncTaskExecutor;
 @Configuration
 @EnableAsync
 @EnableScheduling
-@Profile("!" + Constants.SPRING_PROFILE_FAST)
+@Profile({ Constants.SPRING_PROFILE_ASYNC, Constants.SPRING_PROFILE_PRODUCTION })
 public class AsyncConfiguration implements AsyncConfigurer, EnvironmentAware {
 
   private final Logger log = LoggerFactory.getLogger(AsyncConfiguration.class);
