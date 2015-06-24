@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.codahale.metrics.annotation.Timed;
 import com.mascova.talarion.domain.Category;
 import com.mascova.talarion.repository.CategoryRepository;
+import com.mascova.talarion.repository.specification.CategorySpecificationBuilder;
 import com.mascova.talarion.web.rest.util.PaginationUtil;
 
 /**
@@ -74,9 +76,18 @@ public class CategoryResource {
   @Timed
   public ResponseEntity<List<Category>> getAll(
       @RequestParam(value = "page", required = false) Integer offset,
-      @RequestParam(value = "per_page", required = false) Integer limit) throws URISyntaxException {
-    Page<Category> page = categoryRepository.findAll(PaginationUtil.generatePageRequest(offset,
-        limit));
+      @RequestParam(value = "per_page", required = false) Integer limit,
+      @RequestParam(value = "name", required = false) String name) throws URISyntaxException {
+
+    CategorySpecificationBuilder builder = new CategorySpecificationBuilder();
+
+    if (StringUtils.isNotBlank(name)) {
+      builder.with("name", ":", name);
+    }
+
+    Page<Category> page = categoryRepository.findAll(builder.build(),
+        PaginationUtil.generatePageRequest(offset, limit));
+
     HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/category",
         offset, limit);
     return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);

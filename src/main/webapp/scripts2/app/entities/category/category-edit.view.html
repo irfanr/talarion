@@ -1,0 +1,541 @@
+<div class="header-content">
+    <h2>
+        <i class="fa fa-cogs"></i>Edit Category
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cogs"></i>
+                Category
+                <i class="fa fa-angle-right"></i>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="body-content animated fadeIn">
+    <div class="row" style="margin-bottom: 25px">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="button" ui-sref="setting-produk">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                Kembali</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Start horizontal form -->
+            <div class="panel rounded shadow">
+                <!-- /.panel-heading -->
+                <div class="panel-body no-padding">
+                    <form class="form-horizontal mt-10" ng-submit="save()">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idAksep">idAksep</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idAksep" ng-model="category.idAksep" required
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idPenjamin">idPenjamin</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idPenjamin" ng-model="category.idPenjamin" required
+                                        type="text"/>
+                                </div>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label class="col-sm-3 control-label" for="kodeProduk">kodeProduk</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="kodeProduk" ng-model="category.kodeProduk" required
+                                        type="text"/>
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="thnTerbit">thnTerbit</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="thnTerbit" ng-model="category.thnTerbit" required
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noUrut">noUrut</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noUrut" ng-model="category.noUrut" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="cekDigit">cekDigit</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="cekDigit" ng-model="category.cekDigit"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="kdDokumen">kdDokumen</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="kdDokumen" ng-model="category.kdDokumen"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="urutTerbit">urutTerbit</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="urutTerbit" ng-model="category.urutTerbit"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="stsDokumen">stsDokumen</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="stsDokumen" ng-model="category.stsDokumen"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idSipTerjamin">idSipTerjamin</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idSipTerjamin" ng-model="category.idSipTerjamin"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noDokMohon">noDokMohon</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noDokMohon" ng-model="category.noDokMohon"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglDokMohon">tglDokMohon</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglDokMohon" ng-model="category.tglDokMohon"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noCl">noCl</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idAksep" ng-model="category.idAksep" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglCl">tglCl</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglCl" ng-model="category.tglCl" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noFormPolis">noFormPolis</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noFormPolis" ng-model="category.noFormPolis"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noPolis">noPolis</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noPolis" ng-model="category.noPolis" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglPolis">tglPolis</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglPolis" ng-model="category.tglPolis"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noPolisLm">noPolisLm</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noPolisLm" ng-model="category.noPolisLm"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idRBisnisT">idRBisnisT</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idRBisnisT" ng-model="category.idRBisnisT"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="admRph">admRph</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="admRph" ng-model="category.admRph" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="meterai">meterai</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="meterai" ng-model="category.meterai" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="feebaseRph">feebaseRph</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="feebaseRph" ng-model="category.feebaseRph"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="biayaLainRph">biayaLainRph</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="biayaLainRph" ng-model="category.biayaLainRph"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="jmlDebMohon">jmlDebMohon</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="jmlDebMohon" ng-model="category.jmlDebMohon"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="jmlDebSetuju">jmlDebSetuju</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="jmlDebSetuju" ng-model="category.jmlDebSetuju"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="polaCategory">polaCategory</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="polaCategory" ng-model="category.polaCategory"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="stsAksep">stsAksep</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="stsAksep" ng-model="category.stsAksep"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAksep">tglAksep</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAksep" ng-model="category.tglAksep"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idUserEntry">idUserEntry</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idUserEntry" ng-model="category.idUserEntry"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idUserCek">idUserCek</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idUserCek" ng-model="category.idUserCek"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idUserAnalis">idUserAnalis</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idUserAnalis" ng-model="category.idUserAnalis"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idUserPemutus">idUserPemutus</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idUserPemutus" ng-model="category.idUserPemutus"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idUserTtd1">idUserTtd1</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idUserTtd1" ng-model="category.idUserTtd1"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idUserTtd2">idUserTtd2</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idUserTtd2" ng-model="category.idUserTtd2"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idRekAskGrup">idRekAskGrup</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idRekAskGrup" ng-model="category.idRekAskGrup"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idAgenNonUu">idAgenNonUu</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idAgenNonUu" ng-model="category.idAgenNonUu"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="agenSertfikasi">agenSertfikasi</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="agenSertfikasi" ng-model="category.agenSertfikasi"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idAgenUu">idAgenUu</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idAgenUu" ng-model="category.idAgenUu"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="agenUuSertfikasi">agenUuSertfikasi</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="agenUuSertfikasi"
+                                        ng-model="category.agenUuSertfikasi" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="feePcnAgen">feePcnAgen</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="feePcnAgen" ng-model="category.feePcnAgen"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noKomisiAgen">noKomisiAgen</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noKomisiAgen" ng-model="category.noKomisiAgen"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglKomisiAgen">tglKomisiAgen</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglKomisiAgen" ng-model="category.tglKomisiAgen"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idPolisBundling">idPolisBundling</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idPolisBundling"
+                                        ng-model="category.idPolisBundling" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="posisiBundling">posisiBundling</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="posisiBundling" ng-model="category.posisiBundling"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="feeBundlingPcn">feeBundlingPcn</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="feeBundlingPcn" ng-model="category.feeBundlingPcn"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idReoutTreaty">idReoutTreaty</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idReoutTreaty" ng-model="category.idReoutTreaty"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idSlipFac">idSlipFac</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idSlipFac" ng-model="category.idSlipFac"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="stsBackupFac">stsBackupFac</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="stsBackupFac" ng-model="category.stsBackupFac"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idPladla">idPladla</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idPladla" ng-model="category.idPladla"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idAskredag">idAskredag</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idAskredag" ng-model="category.idAskredag"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="pksAsuransi">pksAsuransi</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="pksAsuransi" ng-model="category.pksAsuransi"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="sCoasuransi">sCoasuransi</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="sCoasuransi" ng-model="category.sCoasuransi"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="stsSpakat">stsSpakat</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="stsSpakat" ng-model="category.stsSpakat"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglSistem">tglSistem</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglSistem" ng-model="category.tglSistem"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="noJurnal">noJurnal</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="noJurnal" ng-model="category.noJurnal"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglJurnal">tglJurnal</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglJurnal" ng-model="category.tglJurnal"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="stsBayar">stsBayar</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="stsBayar" ng-model="category.stsBayar"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="idBayarKom">idBayarKom</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="idBayarKom" ng-model="category.idBayarKom"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAis">tglAis</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAis" ng-model="category.tglAis" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAiskom">tglAiskom</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAiskom" ng-model="category.tglAiskom"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAiskomSpk">tglAiskomSpk</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAiskomSpk" ng-model="category.tglAiskomSpk"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAiskomTag">tglAiskomTag</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAiskomTag" ng-model="category.tglAiskomTag"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAiskomTagbyr">tglAiskomTagbyr</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAiskomTagbyr"
+                                        ng-model="category.tglAiskomTagbyr" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAiskomSpktag">tglAiskomSpktag</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAiskomSpktag"
+                                        ng-model="category.tglAiskomSpktag" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAiskomSpktagByr">tglAiskomSpktagByr</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAiskomSpktagByr"
+                                        ng-model="category.tglAiskomSpktagByr" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAispstBdlspk">tglAispstBdlspk</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAispstBdlspk"
+                                        ng-model="category.tglAispstBdlspk" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAispstBdlspkByr">tglAispstBdlspkByr</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAispstBdlspkByr"
+                                        ng-model="category.tglAispstBdlspkByr" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAisTrtBdl">tglAisTrtBdl</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAisTrtBdl" ng-model="category.tglAisTrtBdl"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAisFacBdl">tglAisFacBdl</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAisFacBdl" ng-model="category.tglAisFacBdl"
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAisTrtBdlByr">tglAisTrtBdlByr</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAisTrtBdlByr"
+                                        ng-model="category.tglAisTrtBdlByr" type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglAisFacBdlByr">tglAisFacBdlByr</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="tglAisFacBdlByr"
+                                        ng-model="category.tglAisFacBdlByr" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.form-body -->
+                        <div class="form-footer">
+                            <div class="col-sm-offset-3">
+                                <button class="btn btn-success" type="submit">Save</button>
+                            </div>
+                        </div>
+                        <!-- /.form-footer -->
+                    </form>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+            <!--/ End horizontal form -->
+        </div>
+    </div>
+</div>
+<footer class="footer-content">
+    2015 &copy; Askrindo
+</footer>

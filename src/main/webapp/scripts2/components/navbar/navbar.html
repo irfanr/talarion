@@ -27,6 +27,14 @@
         </span>
     </li>
     <li ng-switch-when="true" ui-sref-active="active">
+        <a ui-sref="category">
+            <span class="icon">
+                <i class="fa fa-list"></i>
+            </span>
+            <span class="text">Category</span>
+        </a>
+    </li>
+    <li ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="author">
             <span class="icon">
                 <i class="glyphicon glyphicon-wrench"></i>
@@ -96,13 +104,13 @@
             <span class="text">Register</span>
         </a>
     </li>
-    <li class="sidebar-category" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li class="sidebar-category" has-role="ROLE_ADMIN" ng-switch-when="true">
         <span>Admin</span>
         <span class=" pull-right">
             <span class="glyphicon glyphicon-tower"></span>
         </span>
     </li>
-    <li ui-sref-active="active" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li has-role="ROLE_ADMIN" ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="metrics">
             <span class="icon">
                 <i class="glyphicon glyphicon-dashboard"></i>
@@ -110,7 +118,7 @@
             <span class="text">Metrics</span>
         </a>
     </li>
-    <li ui-sref-active="active" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li has-role="ROLE_ADMIN" ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="health">
             <span class="icon">
                 <i class="glyphicon glyphicon-heart"></i>
@@ -118,7 +126,7 @@
             <span class="text">Health</span>
         </a>
     </li>
-    <li ui-sref-active="active" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li has-role="ROLE_ADMIN" ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="configuration">
             <span class="icon">
                 <i class="glyphicon glyphicon-list-alt"></i>
@@ -126,7 +134,7 @@
             <span class="text">Configuration</span>
         </a>
     </li>
-    <li ui-sref-active="active" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li has-role="ROLE_ADMIN" ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="audits">
             <span class="icon">
                 <i class="glyphicon glyphicon-bell"></i>
@@ -134,7 +142,7 @@
             <span class="text">Audits</span>
         </a>
     </li>
-    <li ui-sref-active="active" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li has-role="ROLE_ADMIN" ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="logs">
             <span class="icon">
                 <i class="glyphicon glyphicon-tasks"></i>
@@ -142,7 +150,7 @@
             <span class="text">Logs</span>
         </a>
     </li>
-    <li ui-sref-active="active" ng-switch-when="true" has-role="ROLE_ADMIN">
+    <li has-role="ROLE_ADMIN" ng-switch-when="true" ui-sref-active="active">
         <a ui-sref="docs">
             <span class="icon">
                 <i class="glyphicon glyphicon-book"></i>
@@ -150,8 +158,7 @@
             <span class="text">API Docs</span>
         </a>
     </li>
-
-    <!-- <li class="dropdown pointer" ng-switch-when="true" ui-sref-active="active">
+<!-- <li class="dropdown pointer" ng-switch-when="true" ui-sref-active="active">
         <a class="dropdown-toggle" data-toggle="dropdown" href="">
             <span>
                 <span class="glyphicon glyphicon-th-list"></span>
@@ -175,7 +182,7 @@
 
         </ul>
     </li> -->
-    <!-- <li class="dropdown pointer" ng-class="{active: $state.includes('account')}">
+<!-- <li class="dropdown pointer" ng-class="{active: $state.includes('account')}">
         <a class="dropdown-toggle" data-toggle="dropdown" href="">
             <span>
                 <span class="glyphicon glyphicon-user"></span>
@@ -218,7 +225,7 @@
             </li>
         </ul>
     </li> -->
-    <!-- <li class="dropdown pointer" has-role="ROLE_ADMIN"
+<!-- <li class="dropdown pointer" has-role="ROLE_ADMIN"
         ng-class="{active: $state.includes('admin')}" ng-switch-when="true">
         <a class="dropdown-toggle" data-toggle="dropdown" href="">
             <span>
