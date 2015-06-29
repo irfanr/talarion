@@ -71,11 +71,11 @@
                                 <tbody>
                                     <tr ng-repeat="category in categoryList">
                                         <td>
-                                            <button class="btn btn-sm btn-warning" type="submit" ui-sref="category-edit({id:category.idAksep})">
+                                            <button class="btn btn-sm btn-warning" type="submit" ui-sref="category-edit({id:category.id})">
                                                 <i class="fa fa-pencil"></i>
                                             </button>
                                             &nbsp;
-                                            <button class="btn btn-sm btn-danger" ng-click="delete(category.idAksep)" type="button">
+                                            <button class="btn btn-sm btn-danger" ng-click="delete(category.id)" type="button">
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         </td>
@@ -105,5 +105,5 @@
 <!-- /.row -->
     </div>
     <footer class="footer-content">
-        2015 &copy; Askrindo
+        2015 &copy; Mascova
     </footer>
