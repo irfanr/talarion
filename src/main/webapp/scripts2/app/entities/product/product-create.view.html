@@ -1,0 +1,124 @@
+<div class="modal fade" id="lookupDialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <button aria-hidden="true" class="close" data-dismiss="modal"
+                  type="button">&times;</button>
+              <h4 class="modal-title">Lookup Dialog</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive col-sm-12">
+                <table class="table table-striped" id="category-table" st-pipe="callServer"
+                    st-table="categoryList">
+                    <thead>
+                      <tr>
+                          <td class="text-center" colspan="2" st-items-by-page="20" st-pagination="" st-template="/scripts2/components/pagination/pagination.custom.html"></td>
+                      </tr>
+                        <tr>
+                            <th>Action</th>
+                            <th>Name</th>
+                        </tr>
+                        <th></th>
+                        <th><input st-search="name"/></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="category in categoryList">
+                        <td>
+                            <button class="btn btn-sm btn-success" ng-click="selectLookup(category)"
+                                type="button">
+                                <i class="fa fa-hand-o-right"></i>
+                            </button>
+                        </td>
+                        <td>{{category.name}}</td>
+                    </tr>
+                </tbody>
+                <tbody ng-show="isLoading">
+                    <tr>
+                        <td class="text-center" colspan="2">Loading ...
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                      <td class="text-center" colspan="2" st-items-by-page="20" st-pagination="" st-template="/scripts2/components/pagination/pagination.custom.html"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-default" data-dismiss="modal" type="button">
+                  <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+              </button>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="header-content">
+    <h2>
+        <i class="fa fa-cogs"></i>Create Product
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cogs"></i>
+                Product
+                <i class="fa fa-angle-right"></i>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="body-content animated fadeIn">
+    <div class="row" style="margin-bottom: 25px">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="button" ui-sref="product">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                Kembali</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Start horizontal form -->
+            <div class="panel rounded shadow">
+                <!-- /.panel-heading -->
+                <div class="panel-body no-padding">
+                    <form class="form-horizontal mt-10" ng-submit="create()">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="id">Name</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="id" ng-model="product.name" required
+                                        type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="product.category">Category</label>
+                                <div class="col-sm-7">
+                                  <input class="form-control" id="product.category" ng-model="product.category.name" type="text" >
+                                </div>
+                                <div class="col-sm-2">
+                                  <button id="lookupButton" ng-click="showLookup()" type="button" class="btn btn-circle btn-default btn-stroke"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.form-body -->
+                        <div class="form-footer">
+                            <div class="col-sm-offset-3">
+                                <button class="btn btn-success" type="submit">Create</button>
+                            </div>
+                        </div>
+                        <!-- /.form-footer -->
+                    </form>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+            <!--/ End horizontal form -->
+        </div>
+    </div>
+</div>
+<footer class="footer-content">
+    2015 &copy; Mascova
+</footer>

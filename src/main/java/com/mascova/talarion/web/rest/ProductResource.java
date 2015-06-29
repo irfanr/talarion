@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.codahale.metrics.annotation.Timed;
 import com.mascova.talarion.domain.Product;
 import com.mascova.talarion.repository.ProductRepository;
+import com.mascova.talarion.repository.specification.ProductSpecificationBuilder;
 import com.mascova.talarion.web.rest.util.PaginationUtil;
 
 /**
@@ -74,9 +76,22 @@ public class ProductResource {
   @Timed
   public ResponseEntity<List<Product>> getAll(
       @RequestParam(value = "page", required = false) Integer offset,
-      @RequestParam(value = "per_page", required = false) Integer limit) throws URISyntaxException {
-    Page<Product> page = productRepository.findAll(PaginationUtil
-        .generatePageRequest(offset, limit));
+      @RequestParam(value = "per_page", required = false) Integer limit,
+      @RequestParam(value = "name", required = false) String name,
+      @RequestParam(value = "categoryName", required = false) String categoryName)
+      throws URISyntaxException {
+
+    ProductSpecificationBuilder builder = new ProductSpecificationBuilder();
+
+    if (StringUtils.isNotBlank(name)) {
+      builder.with("name", ":", name);
+    }
+    if (StringUtils.isNotBlank(categoryName)) {
+      builder.with("category.name", ":", categoryName);
+    }
+
+    Page<Product> page = productRepository.findAll(builder.build(),
+        PaginationUtil.generatePageRequest(offset, limit));
     HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/product",
         offset, limit);
     return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);

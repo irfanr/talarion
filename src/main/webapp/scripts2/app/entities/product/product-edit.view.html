@@ -1,0 +1,57 @@
+<div class="header-content">
+    <h2>
+        <i class="fa fa-cogs"></i>Edit Product
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cogs"></i>
+                Product
+                <i class="fa fa-angle-right"></i>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="body-content animated fadeIn">
+    <div class="row" style="margin-bottom: 25px">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="button" ui-sref="product">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                Kembali</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+<!-- Start horizontal form -->
+            <div class="panel rounded shadow">
+<!-- /.panel-heading -->
+                <div class="panel-body no-padding">
+                    <form class="form-horizontal mt-10" ng-submit="save()">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="id">Name</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="id" ng-model="product.name" required type="text"/>
+                                </div>
+                            </div>
+                        </div>
+<!-- /.form-body -->
+                        <div class="form-footer">
+                            <div class="col-sm-offset-3">
+                                <button class="btn btn-success" type="submit">Save</button>
+                            </div>
+                        </div>
+<!-- /.form-footer -->
+                    </form>
+                </div>
+<!-- /.panel-body -->
+            </div>
+<!-- /.panel -->
+<!--/ End horizontal form -->
+        </div>
+    </div>
+</div>
+<footer class="footer-content">
+    2015 &copy; Mascova
+</footer>
