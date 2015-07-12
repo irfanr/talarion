@@ -1,0 +1,48 @@
+<div class="header-content">
+    <h2>
+        <i class="fa fa-cogs"/>
+        Create Sip
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">
+            You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cogs"/>
+                Sip<i class="fa fa-angle-right"/></li>
+        </ol>
+    </div>
+</div>
+<div class="body-content animated fadeIn">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <form name="myForm">
+                <fieldset>
+                    <legend>Upload on form submit</legend>
+                    Username:
+                    <input name="userName" ng-model="username" required="" size="39" type="text">
+                    <i ng-show="myForm.userName.$error.required">*required</i><br>
+                    Profile Picture:
+                    <input accept="image/*" name="file" ng-model="picFile" ngf-select="" required="" type="file">
+                    <i ng-show="myForm.file.$error.required">*required</i>
+                    <br>
+
+                    <button ng-click="uploadPic(picFile)" ng-disabled="!myForm.$valid">Submit</button>
+                    <img class="thumb" ng-show="picFile[0] != null" ngf-src="picFile[0]">
+                    <span class="progress" ng-show="picFile[0].progress >= 0">
+                        <div class="ng-binding" ng-bind="picFile[0].progress + '%'" style="width:{{picFile[0].progress}}%"></div>
+                    </span>
+                    <span ng-show="picFile[0].result">Upload Successful</span>
+                </fieldset>
+                <br>
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+<footer class="footer-content">
+2015 &copy; Askrindo
+</footer>

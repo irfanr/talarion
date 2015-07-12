@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('talarionApp', ['LocalStorageModule', 'tmh.dynamicLocale',
-    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster', 'infinite-scroll','smart-table','ui.bootstrap'])
+    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster', 'infinite-scroll','smart-table','ui.bootstrap','ngFileUpload'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Auth, Principal, Language, ENV, VERSION) {
         $rootScope.ENV = ENV;
@@ -63,7 +63,7 @@ angular.module('talarionApp', ['LocalStorageModule', 'tmh.dynamicLocale',
 				return $q.reject(response);
 			}
 		};
-	})    
+	})
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
 
         //enable CSRF
