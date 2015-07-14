@@ -1,0 +1,109 @@
+<div class="modal fade" id="deleteImageConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="deleteForm" ng-submit="confirmDelete(image.id)">
+                <div class="modal-header">
+                    <button aria-hidden="true" class="close" data-dismiss="modal" ng-click="clear()" type="button">&times;</button>
+                    <h4 class="modal-title">Confirm delete operation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+                    </button>
+                    <button class="btn btn-danger" type="submit">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span>Delete</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="header-content">
+    <h2>
+        <i class="fa fa-cogs"></i>Image
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cogs"></i>
+                Setting Produk
+                <i class="fa fa-angle-right"></i>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="body-content animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel rounded shadow">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Image List</h3>
+                </div>
+<!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-sm btn-success" type="button" ui-sref="image-create">
+                                <i class="fa fa-plus"></i>
+                                &nbsp; Buat Baru
+                            </button>
+                        </div>
+                        &nbsp;
+                        <div class="table-responsive col-sm-12">
+                            <table class="table table-striped" id="setting-image-table" st-pipe="callServer" st-table="imageList">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 100px">Action</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                    </tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th><input st-search="name"/></th>
+                                    <tr>
+                                        <td class="text-center" colspan="3" st-items-by-page="20" st-pagination=""></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="image in imageList">
+                                        <td>
+                                            <button class="btn btn-sm btn-warning" type="submit" ui-sref="image-edit({id:image.id})">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>
+                                            &nbsp;
+                                            <button class="btn btn-sm btn-danger" ng-click="delete(image.id)" type="button">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                        <td>{{image.id}}</td>
+                                        <td>{{image.name}}</td>
+                                    </tbody>
+                                    <tbody ng-show="isLoading">
+                                        <tr>
+                                            <td class="text-center" colspan="3">Loading ...
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="text-center" colspan="3" st-items-by-page="20" st-pagination=""></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+<!-- /.panel-body -->
+                </div>
+<!-- /.panel -->
+            </div>
+        </div>
+<!-- /.row -->
+    </div>
+    <footer class="footer-content">
+        2015 &copy; Mascova
+    </footer>

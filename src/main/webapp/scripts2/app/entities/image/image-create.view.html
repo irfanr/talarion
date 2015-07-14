@@ -21,9 +21,6 @@
             <form name="myForm">
                 <fieldset>
                     <legend>Upload on form submit</legend>
-                    Username:
-                    <input name="userName" ng-model="username" required="" size="39" type="text">
-                    <i ng-show="myForm.userName.$error.required">*required</i><br>
                     Profile Picture:
                     <input accept="image/*" name="file" ng-model="picFile" ngf-select="" required="" type="file">
                     <i ng-show="myForm.file.$error.required">*required</i>

@@ -123,3 +123,5 @@ Desktop.ini
 !gradle/wrapper/gradle-wrapper.jar
 /target/
 /target/
+
+/src/main/webapp/upload/

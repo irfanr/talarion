@@ -5,7 +5,7 @@
  * @name yoAngularApp.controller:AboutCtrl
  * @description # AboutCtrl Controller of the yoAngularApp
  */
-angular.module('talarionApp').controller('UploadImageController',
+angular.module('talarionApp').controller('ImageCreateController',
     function($scope, $state, $stateParams, Upload) {
 
         $scope.uploadPic = function(file) {
@@ -18,6 +18,7 @@ angular.module('talarionApp').controller('UploadImageController',
                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
             }).success(function(data, status, headers, config) {
                 console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                $state.go('image')
             });
 
         };
