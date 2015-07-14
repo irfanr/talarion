@@ -11,7 +11,7 @@ angular.module('talarionApp').controller('UploadImageController',
         $scope.uploadPic = function(file) {
 
             Upload.upload({
-                url: 'api/upload',
+                url: 'api/image',
                 file: file
             }).progress(function(evt) {
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);

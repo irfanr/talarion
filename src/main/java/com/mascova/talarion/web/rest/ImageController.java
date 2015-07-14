@@ -5,45 +5,69 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mascova.talarion.domain.Image;
+import com.mascova.talarion.repository.ImageRepository;
+
 @RestController
 @RequestMapping("/api")
-public class UploadController {
+public class ImageController {
+
+  @Inject
+  private ImageRepository imageRepository;
+
+  private String realPath;
 
   @ResponseStatus(HttpStatus.OK)
-  @RequestMapping(value = "/upload")
-  public void upload(@RequestParam("file") MultipartFile incomingFile, HttpServletRequest request)
-      throws IOException {
+  @RequestMapping(value = "/image", method = RequestMethod.POST)
+  public ResponseEntity<Void> create(@RequestParam("file") MultipartFile incomingFile,
+      HttpServletRequest request) throws IOException, URISyntaxException {
+
+    realPath = request.getSession().getServletContext().getRealPath("/");
 
     String fileName = incomingFile.getOriginalFilename();
 
     if (!incomingFile.isEmpty()) {
 
-      uploadFile(incomingFile, request, fileName);
+      File newFile = uploadFile(incomingFile, fileName);
+
+      Image image = new Image();
+      image.setName(fileName);
+      image.setPath(realPath + "upload/images/" + fileName);
+      image.setType(FilenameUtils.getExtension(newFile.getAbsolutePath()));
+
+      imageRepository.save(image);
 
     }
 
+    return ResponseEntity.created(new URI("/api/image/")).build();
+
   }
 
-  private void uploadFile(MultipartFile file, HttpServletRequest request, String fileName) {
+  private File uploadFile(MultipartFile file, String fileName) {
     InputStream inputStream;
     OutputStream outputStream;
+    File newFile = null;
     // BEGIN Upload file
     try {
       inputStream = file.getInputStream();
 
-      String realPath = request.getSession().getServletContext().getRealPath("/");
-
-      File newFile = new File(realPath + "/upload/" + fileName);
+      newFile = new File(realPath + "/upload/images/" + fileName);
       if (!newFile.exists()) {
         newFile.createNewFile();
       }
@@ -54,11 +78,15 @@ public class UploadController {
       while ((read = inputStream.read(bytes)) != -1) {
         outputStream.write(bytes, 0, read);
       }
+
+      return newFile;
+
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
     // END Upload file
+    return newFile;
   }
 
 }
