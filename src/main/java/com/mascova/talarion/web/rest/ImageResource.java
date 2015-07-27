@@ -34,7 +34,7 @@ import com.mascova.talarion.web.rest.util.PaginationUtil;
 
 @RestController
 @RequestMapping("/api")
-public class ImageController {
+public class ImageResource {
 
   @Inject
   private ImageRepository imageRepository;
