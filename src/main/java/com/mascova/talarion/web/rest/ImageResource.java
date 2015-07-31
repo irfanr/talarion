@@ -8,17 +8,21 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,6 +39,8 @@ import com.mascova.talarion.web.rest.util.PaginationUtil;
 @RestController
 @RequestMapping("/api")
 public class ImageResource {
+
+  private final Logger log = LoggerFactory.getLogger(ImageResource.class);
 
   @Inject
   private ImageRepository imageRepository;
@@ -118,6 +124,43 @@ public class ImageResource {
     }
     // END Upload file
     return newFile;
+  }
+
+  /**
+   * GET /image/:id -> get the "id" category.
+   */
+  @RequestMapping(value = "/image/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @Timed
+  public ResponseEntity<Image> get(@PathVariable Long id) {
+    log.debug("REST request to get Category : {}", id);
+    return Optional.ofNullable(imageRepository.findOne(id))
+        .map(image -> new ResponseEntity<>(image, HttpStatus.OK))
+        .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+  }
+
+  /**
+   * DELETE /category/:id -> delete the "id" category.
+   */
+  @RequestMapping(value = "/image/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+  @Timed
+  public void delete(@PathVariable Long id, HttpServletRequest request) {
+    log.debug("REST request to delete Image : {}", id);
+    Image image = imageRepository.findOne(id);
+    if (image != null) {
+      imageRepository.delete(id);
+      deleteFile(request, image.getName());
+    }
+
+  }
+
+  private void deleteFile(HttpServletRequest request, String fileName) {
+
+    realPath = request.getSession().getServletContext().getRealPath("/");
+
+    File existingFile = new File(realPath + "/upload/images/" + fileName);
+    if (existingFile.exists()) {
+      existingFile.delete();
+    }
   }
 
 }
