@@ -1,5 +1,5 @@
             <!-- Start left navigation - profile shortcut -->
-            <div class="sidebar-content" ng-show="isAuthenticated()">
+            <div class="sidebar-content" ng-show="isAuthenticated()" user-profile>
                 <div class="media">
                     <a class="pull-left has-notif avatar" href="page-profile.html">
                         <img src="themes/blankon/1.0.7/assets/global/img/avatar/50/26.png" alt="admin"> <i class="online"></i>
@@ -7,9 +7,9 @@
                     <div class="media-body">
                         <h4 class="media-heading">
                             Hello,
-                            <span>{{account.firstName}}</span>
+                            <span id="account-firstName">{{account.firstName}}</span>
                         </h4>
-                        <small>Roles: {{account.roles[0]}}</small>
+                        <small id="account-role">Roles: {{account.roles[0]}}</small>
                     </div>
                 </div>
             </div>
