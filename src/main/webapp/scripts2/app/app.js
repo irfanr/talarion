@@ -10,6 +10,8 @@ angular.module('talarionApp', ['LocalStorageModule', 'tmh.dynamicLocale',
             $rootScope.toState = toState;
             $rootScope.toStateParams = toStateParams;
 
+            console.log('stateChangeStart');
+
             if (Principal.isIdentityResolved()) {
                 Auth.authorize();
             }
@@ -22,6 +24,8 @@ angular.module('talarionApp', ['LocalStorageModule', 'tmh.dynamicLocale',
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
             var titleKey = 'global.title';
+
+            console.log('stateChangeSuccess');
 
             $rootScope.previousStateName = fromState.name;
             $rootScope.previousStateParams = fromParams;

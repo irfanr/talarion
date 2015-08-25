@@ -1,22 +1,29 @@
-            <!-- Start left navigation - profile shortcut -->
-            <div class="sidebar-content" ng-show="isAuthenticated()" user-profile>
-                <div class="media">
-                    <a class="pull-left has-notif avatar" href="page-profile.html">
-                        <img src="themes/blankon/1.0.7/assets/global/img/avatar/50/26.png" alt="admin"> <i class="online"></i>
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            Hello,
-                            <span id="account-firstName">{{account.firstName}}</span>
-                        </h4>
-                        <small id="account-role">Roles: {{account.roles[0]}}</small>
-                    </div>
+<!-- Start left navigation - profile shortcut -->
+<div class="sidebar-content" ng-show="isAuthenticated()">
+    <div class="media">
+        <a class="pull-left has-notif avatar" href="page-profile.html">
+            <img alt="admin" src="themes/blankon/1.0.7/assets/global/img/avatar/50/26.png">
+            <i class="online"></i>
+        </a>
+        <div class="media-body" ng-controller="UserProfileController">
+            <h4 class="media-heading">
+                Hello,
+                <span id="account-firstName">{{account.firstName}}</span>
+            </h4>
+            <small id="account-role">
+                Roles:
+                <div ng-repeat="role in account.roles">
+                    {{role}}
                 </div>
-            </div>
-            <!-- /.sidebar-content -->
-            <!--/ End left navigation -  profile shortcut -->
+                
+            </small>
+        </div>
+    </div>
+</div>
+<!-- /.sidebar-content -->
+<!--/ End left navigation -  profile shortcut -->
 
-            <!-- Start left navigation - menu -->
+<!-- Start left navigation - menu -->
 
 <!-- <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -316,13 +323,23 @@
     </div>
 </nav> -->
 
-            <!-- /.sidebar-menu -->
-            <!--/ End left navigation - menu -->
+<!-- /.sidebar-menu -->
+<!--/ End left navigation - menu -->
 
-            <!-- Start left navigation - footer -->
-            <div class="sidebar-footer hidden-xs hidden-sm hidden-md">
-                <a id="setting" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Setting"><i class="fa fa-cog"></i></a> <a id="fullscreen" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top"
-                data-title="Fullscreen"><i class="fa fa-desktop"></i></a> <a id="lock-screen" data-url="page-signin.html" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Lock Screen"><i class="fa fa-lock"></i></a>               <a id="logout" data-url="page-lock-screen.html" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Logout"><i class="fa fa-power-off"></i></a>
-            </div>
-            <!-- /.sidebar-footer -->
-            <!--/ End left navigation - footer -->
+<!-- Start left navigation - footer -->
+<div class="sidebar-footer hidden-xs hidden-sm hidden-md">
+    <a class="pull-left" data-placement="top" data-title="Setting" data-toggle="tooltip" href="javascript:void(0);" id="setting">
+        <i class="fa fa-cog"></i>
+    </a>
+    <a class="pull-left" data-placement="top" data-title="Fullscreen" data-toggle="tooltip" href="javascript:void(0);" id="fullscreen">
+        <i class="fa fa-desktop"></i>
+    </a>
+    <a class="pull-left" data-placement="top" data-title="Lock Screen" data-toggle="tooltip" data-url="page-signin.html" href="javascript:void(0);" id="lock-screen">
+        <i class="fa fa-lock"></i>
+    </a>
+    <a class="pull-left" data-placement="top" data-title="Logout" data-toggle="tooltip" data-url="page-lock-screen.html" href="javascript:void(0);" id="logout">
+        <i class="fa fa-power-off"></i>
+    </a>
+</div>
+<!-- /.sidebar-footer -->
+<!--/ End left navigation - footer -->
