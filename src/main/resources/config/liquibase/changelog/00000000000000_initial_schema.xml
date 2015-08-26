@@ -16,6 +16,14 @@
         The initial schema has the '00000000000001' id, so that it is over-written if we re-generate it.
     -->
     <changeSet id="00000000000001" author="jhipster">
+    
+        <createTable tableName="JHI_GROUP">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+        </createTable>
+    
         <createTable tableName="JHI_USER">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -46,6 +54,7 @@
             </column>
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
+            <column name="group_id" type="bigint"/>
         </createTable>
 
         <createIndex indexName="idx_user_login"
@@ -59,6 +68,12 @@
             unique="true">
             <column name="email" type="varchar(100)"/>
         </createIndex>
+        
+        <addForeignKeyConstraint baseColumnNames="group_id"
+                         baseTableName="JHI_USER"
+                         constraintName="fk_pk9chy5ng76yah66jgt5cgyjg"
+                         referencedColumnNames="id"
+                         referencedTableName="JHI_GROUP"/>
 
         <createTable tableName="JHI_AUTHORITY">
             <column name="name" type="varchar(50)">
@@ -76,6 +91,29 @@
         </createTable>
 
         <addPrimaryKey columnNames="user_id, authority_name" tableName="JHI_USER_AUTHORITY"/>
+        
+        <createTable tableName="JHI_GROUP_AUTHORITY">
+            <column name="group_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        
+        <addPrimaryKey columnNames="group_id, authority_name" tableName="JHI_GROUP_AUTHORITY "/>
+        
+        <addForeignKeyConstraint baseColumnNames="authority_name"
+                                 baseTableName="JHI_GROUP_AUTHORITY"
+                                 constraintName="fk_rac3rjr5x721hunlhd16pvq2w"
+                                 referencedColumnNames="name"
+                                 referencedTableName="JHI_AUTHORITY"/>
+
+        <addForeignKeyConstraint baseColumnNames="group_id"
+                                 baseTableName="JHI_GROUP_AUTHORITY"
+                                 constraintName="fk_5jiah3fjtlm07j8y6h1q7smiy"
+                                 referencedColumnNames="id"
+                                 referencedTableName="JHI_GROUP"/>        
 
         <createTable tableName="JHI_PERSISTENT_TOKEN">
             <column name="series" type="varchar(255)">
@@ -109,6 +147,12 @@
                                  referencedTableName="JHI_USER"/>
 
         <loadData encoding="UTF-8"
+                  file="config/liquibase/group.csv"
+                  separator=";"
+                  tableName="JHI_GROUP">
+        </loadData>
+
+        <loadData encoding="UTF-8"
                   file="config/liquibase/users.csv"
                   separator=";"
                   tableName="JHI_USER">
@@ -126,6 +170,11 @@
                   file="config/liquibase/users_authorities.csv"
                   separator=";"
                   tableName="JHI_USER_AUTHORITY"/>
+                  
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/group_authorities.csv"
+                  separator=";"
+                  tableName="JHI_GROUP_AUTHORITY"/>                  
 
         <createTable tableName="JHI_PERSISTENT_AUDIT_EVENT">
             <column name="event_id" type="bigint" autoIncrement="true">
