@@ -9,5 +9,6 @@
     <include file="classpath:config/liquibase/changelog/20150523070432_added_entity_Book.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/category.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/product.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/salesHead.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>
