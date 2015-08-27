@@ -10,12 +10,8 @@
                 Hello,
                 <span id="account-firstName">{{account.firstName}}</span>
             </h4>
-            <small id="account-role">
-                Roles:
-                <div ng-repeat="role in account.roles">
-                    {{role}}
-                </div>
-                
+            <small>
+                Group: {{account.group.name}}
             </small>
         </div>
     </div>

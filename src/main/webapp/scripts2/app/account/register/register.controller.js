@@ -1,15 +1,33 @@
 'use strict';
 
 angular.module('talarionApp')
-    .controller('RegisterController', function ($scope, $translate, $timeout, Auth) {
+    .controller('RegisterController', function($scope, $translate, $timeout, Auth, Group) {
         $scope.success = null;
         $scope.error = null;
         $scope.doNotMatch = null;
         $scope.errorUserExists = null;
         $scope.registerAccount = {};
-        $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
+        $scope.registerAccount.group = {};
+        $scope.groupList = {};
+        $timeout(function() {
+            angular.element('[ng-model="registerAccount.login"]').focus();
+        });
 
-        $scope.register = function () {
+        $scope.loadAllGroup = function() {
+
+            $scope.sipGrup1List = {};
+            $scope.sipGrup2List = {};
+            $scope.sipGrup3List = {};
+
+            Group.query(function(result, headers) {
+                $scope.groupList = result;
+            });
+
+        };
+
+        $scope.loadAllGroup();
+
+        $scope.register = function() {
             if ($scope.registerAccount.password !== $scope.confirmPassword) {
                 $scope.doNotMatch = 'ERROR';
             } else {
@@ -19,9 +37,9 @@ angular.module('talarionApp')
                 $scope.errorUserExists = null;
                 $scope.errorEmailExists = null;
 
-                Auth.createAccount($scope.registerAccount).then(function () {
+                Auth.createAccount($scope.registerAccount).then(function() {
                     $scope.success = 'OK';
-                }).catch(function (response) {
+                }).catch(function(response) {
                     $scope.success = null;
                     if (response.status === 400 && response.data === 'login already in use') {
                         $scope.errorUserExists = 'ERROR';
