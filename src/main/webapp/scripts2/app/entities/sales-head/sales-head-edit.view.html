@@ -1,0 +1,88 @@
+<div class="header-content">
+    <h2>
+        <i class="fa fa-cogs"></i>Edit Sales
+    </h2>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cogs"></i>
+                Edit Sales
+                <i class="fa fa-angle-right"></i>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="body-content animated fadeIn">
+    <div class="row" style="margin-bottom: 25px">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="button" ui-sref="sales-head">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                Kembali</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+<!-- Start horizontal form -->
+            <div class="panel rounded shadow">
+<!-- /.panel-heading -->
+                <div class="panel-body no-padding">
+                    <form class="form-horizontal mt-10" ng-submit="save()">
+                        <div class="form-body">
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="tglSistem">
+                                    Sales Date</label>
+                                <div class="col-sm-3">
+                                    <p class="input-group">
+                                        <input class="form-control" close-text="Close" datepicker-options="dateOptions" datepicker-popup="{{format}}" id="tglSistem" is-open="opened" ng-model="salesHead.salesDate" ng-required="true" type="text"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" ng-click="open($event)" type="button">
+                                                <i class="glyphicon glyphicon-calendar"/>
+                                            </button>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="id">Total Price</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="id" ng-model="salesHead.totalPrice" required type="text"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="id">Discount</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="id" ng-model="salesHead.discount" required type="text"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="id">VAT</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="id" ng-model="salesHead.vat" required type="text"/>
+                                </div>
+                            </div>
+
+                        </div>
+<!-- /.form-body -->
+                        <div class="form-footer">
+                            <div class="col-sm-offset-3">
+                                <button class="btn btn-success" type="submit">Save</button>
+                            </div>
+                        </div>
+<!-- /.form-footer -->
+                    </form>
+                </div>
+<!-- /.panel-body -->
+            </div>
+<!-- /.panel -->
+<!--/ End horizontal form -->
+        </div>
+    </div>
+</div>
+<footer class="footer-content">
+    2015 &copy; Mascova
+</footer>

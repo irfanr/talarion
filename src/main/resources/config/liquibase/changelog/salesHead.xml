@@ -13,7 +13,7 @@
         <constraints primaryKey="true" nullable="false" />
       </column>
       <column name="version" type="bigint" />
-      <column name="sales_head" type="timestamp">
+      <column name="sales_date" type="timestamp">
         <constraints nullable="false" />
       </column>
       <column name="total_price" type="numeric(19,2)">

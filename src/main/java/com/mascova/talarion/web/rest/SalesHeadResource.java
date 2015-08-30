@@ -39,9 +39,9 @@ public class SalesHeadResource {
   private SalesHeadRepository salesHeadRepository;
 
   /**
-   * POST /salesHeads -> Create a new salesHead.
+   * POST /sales-head -> Create a new salesHead.
    */
-  @RequestMapping(value = "/salesHeads", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+  @RequestMapping(value = "/sales-head", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
   @Timed
   public ResponseEntity<Void> create(@RequestBody SalesHead salesHead) throws URISyntaxException {
     log.debug("REST request to save SalesHead : {}", salesHead);
@@ -50,13 +50,13 @@ public class SalesHeadResource {
           .header("Failure", "A new salesHead cannot already have an ID").build();
     }
     salesHeadRepository.save(salesHead);
-    return ResponseEntity.created(new URI("/api/salesHeads/" + salesHead.getId())).build();
+    return ResponseEntity.created(new URI("/api/sales-head/" + salesHead.getId())).build();
   }
 
   /**
-   * PUT /salesHeads -> Updates an existing salesHead.
+   * PUT /sales-head -> Updates an existing salesHead.
    */
-  @RequestMapping(value = "/salesHeads", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+  @RequestMapping(value = "/sales-head", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
   @Timed
   public ResponseEntity<Void> update(@RequestBody SalesHead salesHead) throws URISyntaxException {
     log.debug("REST request to update SalesHead : {}", salesHead);
@@ -68,24 +68,24 @@ public class SalesHeadResource {
   }
 
   /**
-   * GET /salesHeads -> get all the salesHeads.
+   * GET /sales-head -> get all the sales-head.
    */
-  @RequestMapping(value = "/salesHeads", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @RequestMapping(value = "/sales-head", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   @Timed
   public ResponseEntity<List<SalesHead>> getAll(
       @RequestParam(value = "page", required = false) Integer offset,
       @RequestParam(value = "per_page", required = false) Integer limit) throws URISyntaxException {
     Page<SalesHead> page = salesHeadRepository.findAll(PaginationUtil.generatePageRequest(offset,
         limit));
-    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/salesHeads",
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/sales-head",
         offset, limit);
     return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
   }
 
   /**
-   * GET /salesHeads/:id -> get the "id" salesHead.
+   * GET /sales-head/:id -> get the "id" salesHead.
    */
-  @RequestMapping(value = "/salesHeads/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @RequestMapping(value = "/sales-head/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   @Timed
   public ResponseEntity<SalesHead> get(@PathVariable Long id) {
     log.debug("REST request to get SalesHead : {}", id);
@@ -95,9 +95,9 @@ public class SalesHeadResource {
   }
 
   /**
-   * DELETE /salesHeads/:id -> delete the "id" salesHead.
+   * DELETE /sales-head/:id -> delete the "id" salesHead.
    */
-  @RequestMapping(value = "/salesHeads/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+  @RequestMapping(value = "/sales-head/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
   @Timed
   public void delete(@PathVariable Long id) {
     log.debug("REST request to delete SalesHead : {}", id);

@@ -18,6 +18,10 @@ import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.mascova.talarion.domain.util.CustomDateTimeDeserializer;
+import com.mascova.talarion.domain.util.CustomDateTimeSerializer;
 
 @Entity
 @Table(name = "sales_head")
@@ -36,6 +40,8 @@ public class SalesHead implements Serializable {
   private Long version;
 
   @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+  @JsonSerialize(using = CustomDateTimeSerializer.class)
+  @JsonDeserialize(using = CustomDateTimeDeserializer.class)
   @Column(name = "sales_date", nullable = false)
   private DateTime salesDate = null;
 
