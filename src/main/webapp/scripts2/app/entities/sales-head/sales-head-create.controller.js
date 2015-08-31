@@ -8,7 +8,7 @@
 angular.module('talarionApp').controller('SalesHeadCreateController',
     function($scope, $state, $stateParams, SalesHead) {
 
-      $scope.salesHead = {};
+        $scope.salesHead = {};
 
         // BEGIN Datepicker
         $scope.open = function($event) {
@@ -37,8 +37,8 @@ angular.module('talarionApp').controller('SalesHeadCreateController',
 
         $scope.create = function() {
 
-            SalesHead.save($scope.salesHead, function() {
-                $state.go('sales-head')
+            SalesHead.save($scope.salesHead, function(result) {
+                $state.go('sales-head-edit',{ 'id':result.id});
             });
 
         };

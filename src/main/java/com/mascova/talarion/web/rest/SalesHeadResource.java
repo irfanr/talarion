@@ -1,6 +1,5 @@
 package com.mascova.talarion.web.rest;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
@@ -38,19 +37,35 @@ public class SalesHeadResource {
   @Inject
   private SalesHeadRepository salesHeadRepository;
 
+  // /**
+  // * POST /sales-head -> Create a new salesHead.
+  // */
+  // @RequestMapping(value = "/sales-head", method = RequestMethod.POST, produces =
+  // MediaType.APPLICATION_JSON_VALUE)
+  // @Timed
+  // public ResponseEntity<Void> create(@RequestBody SalesHead salesHead) throws URISyntaxException
+  // {
+  // log.debug("REST request to save SalesHead : {}", salesHead);
+  // if (salesHead.getId() != null) {
+  // return ResponseEntity.badRequest()
+  // .header("Failure", "A new salesHead cannot already have an ID").build();
+  // }
+  // salesHeadRepository.save(salesHead);
+  // return ResponseEntity.created(new URI("/api/sales-head/" + salesHead.getId())).build();
+  // }
+
   /**
-   * POST /sales-head -> Create a new salesHead.
+   * POST /sales-head -> Create a new salesHead and return newly saved.
    */
   @RequestMapping(value = "/sales-head", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
   @Timed
-  public ResponseEntity<Void> create(@RequestBody SalesHead salesHead) throws URISyntaxException {
+  public ResponseEntity<SalesHead> createAndGet(@RequestBody SalesHead salesHead)
+      throws URISyntaxException {
     log.debug("REST request to save SalesHead : {}", salesHead);
-    if (salesHead.getId() != null) {
-      return ResponseEntity.badRequest()
-          .header("Failure", "A new salesHead cannot already have an ID").build();
-    }
-    salesHeadRepository.save(salesHead);
-    return ResponseEntity.created(new URI("/api/sales-head/" + salesHead.getId())).build();
+    SalesHead persistedSalesHead = salesHeadRepository.save(salesHead);
+    return Optional.ofNullable(persistedSalesHead)
+        .map(output -> new ResponseEntity<>(output, HttpStatus.OK))
+        .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
   }
 
   /**
@@ -60,9 +75,7 @@ public class SalesHeadResource {
   @Timed
   public ResponseEntity<Void> update(@RequestBody SalesHead salesHead) throws URISyntaxException {
     log.debug("REST request to update SalesHead : {}", salesHead);
-    if (salesHead.getId() == null) {
-      return create(salesHead);
-    }
+
     salesHeadRepository.save(salesHead);
     return ResponseEntity.ok().build();
   }
