@@ -36,6 +36,7 @@
 
 	<!-- START @GLOBAL MANDATORY STYLES -->
 	<link href="themes/blankon/1.0.7/assets/global/plugins/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bower_components/angular-growl-v2/build/angular-growl.min.css" rel="stylesheet">
 	<!--/ END GLOBAL MANDATORY STYLES -->
 
 	<!-- START @PAGE LEVEL STYLES -->
@@ -106,6 +107,8 @@
     -->
 
 <body ng-app="talarionApp">
+
+    <div growl></div>
 
 	<!--[if lt IE 9]>
         <p class="upgrade-browser">Upps!! You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
@@ -1407,6 +1410,7 @@
 	<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 	<script src="bower_components/ng-currency/dist/ng-currency.min.js"></script>
 	<script src='bower_components/angular-mask/dist/ngMask.min.js'></script>
+	<script src="bower_components/angular-growl-v2/build/angular-growl.min.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->
 

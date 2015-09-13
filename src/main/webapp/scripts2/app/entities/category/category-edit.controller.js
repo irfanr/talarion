@@ -6,7 +6,7 @@
  * @description # AboutCtrl Controller of the yoAngularApp
  */
 angular.module('talarionApp').controller('CategoryEditController',
-    function($scope, $state, $stateParams, Category) {
+    function($scope, $state, $stateParams, Category, growl) {
 
         $scope.category = {};
 
@@ -22,6 +22,9 @@ angular.module('talarionApp').controller('CategoryEditController',
         $scope.save = function() {
 
           Category.update($scope.category, function() {
+        	  
+        	  growl.info("Category successfully edited ", {});
+        	  
                 $state.go('category')
             });
 

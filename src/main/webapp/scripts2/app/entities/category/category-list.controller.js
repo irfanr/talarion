@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('talarionApp')
-    .controller('CategoryController', function($scope, $state, Category, ParseLinks) {
+    .controller('CategoryController', function($scope, $state, Category, ParseLinks, growl) {
         $scope.categoryList = [];
         $scope.page = 1;
         $scope.loadAll = function() {
@@ -59,6 +59,7 @@ angular.module('talarionApp')
                     $scope.loadAll();
                     $('#deleteCategoryConfirmation').modal('hide');
                     $scope.clear();
+                    growl.info("Category successfully deleted ", {});
                 });
         };
 
