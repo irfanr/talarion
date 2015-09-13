@@ -81,6 +81,34 @@
             <span class="text">Gallery</span>
         </a>
     </li>
+    <li class="sidebar-category" ng-switch-when="true">
+        <span>Transaction</span>
+        <span class=" pull-right">
+            <span class="glyphicon glyphicon-transfer"></span>
+        </span>
+    </li>
+    <li ng-switch-when="true" ui-sref-active="active">
+        <a ui-sref="sales-head">
+          <span class="icon">
+              <i class="fa fa-money"></i>
+          </span>
+            <span class="text">Sales</span>
+        </a>
+    </li>
+    <li class="sidebar-category" ng-switch-when="true">
+        <span>Report</span>
+        <span class=" pull-right">
+            <span class="glyphicon glyphicon-book"></span>
+        </span>
+    </li>
+    <li ng-switch-when="true" ui-sref-active="active">
+        <a ui-sref="sales-report">
+          <span class="icon">
+              <i class="fa fa-money"></i>
+          </span>
+            <span class="text">Sales Report</span>
+        </a>
+    </li>
     <li class="sidebar-category">
         <span>Account</span>
         <span class=" pull-right">
