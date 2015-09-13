@@ -1,7 +1,10 @@
 package com.mascova.talarion;
 
+import java.awt.Desktop;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -80,6 +83,26 @@ public class Application {
         + "External: \thttp://{}:{}\n----------------------------------------------------------",
         env.getProperty("server.port"), InetAddress.getLocalHost().getHostAddress(),
         env.getProperty("server.port"));
+
+    String url = "http://localhost:" + env.getProperty("server.port");
+
+    // if (env.acceptsProfiles(Constants.SPRING_PROFILE_EXT_BROWSER)) {
+
+    if (Desktop.isDesktopSupported()) {
+      Desktop desktop = Desktop.getDesktop();
+      try {
+        desktop.browse(new URI(url));
+      } catch (IOException | URISyntaxException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    } else {
+
+      StartBrowser.openBrowser(url);
+
+    }
+
+    // } // END if (env.acceptsProfiles(Constants.SPRING_PROFILE_EXT_BROWSER)
 
   }
 
