@@ -1,0 +1,95 @@
+{
+    "metrics": {
+        "title": "Aplikasi Metrics",
+        "refresh.button": "Segarkan",
+        "updating": "Memperbarui ...",
+        "jvm": {
+            "title": "JVM Metrics",
+            "memory": {
+                "title": "Memory",
+                "total": "Jumlah Memory",
+                "heap": "Tumpukan Memory",
+                "nonheap": "Bukan Tumpukan Memory"
+            },
+            "threads": {
+                "title": "Threads",
+                "all": "Semua",
+                "runnable": "Runnable",
+                "timedwaiting": "Jangka waktu tunggu",
+                "waiting": "Menunggu",
+                "blocked": "Di Blokir",
+                "dump": {
+                    "title": "Threads dump",
+                    "id": "Id: ",
+                    "blockedtime": "Waktu Diblokir",
+                    "blockedcount": "Hitungan Diblokir",
+                    "waitedtime": "Menunggu Waktu",
+                    "waitedcount": "Menunggu Hitungan",
+                    "lockname": "Kunci Nama",
+                    "stacktrace": "Stacktrace",
+                    "show": "Tampilkan",
+                    "hide": "Sembunyikan"
+                }
+            },
+            "gc": {
+                "title": "Sampah koleksi",
+                "marksweepcount": "Mark hitungan Sapu",
+                "marksweeptime": "Mark Waktu Sapu",
+                "scavengecount": "Mengais Hitungan",
+                "scavengetime": "Mengais Waktu"
+            },
+            "http": {
+                "title": "permintaan HTTP (peristiwa per detik)",
+                "active": "permintaan Aktif:",
+                "total": "Jumlah permintaan:",
+                "table": {
+                    "code": "Kode",
+                    "count": "Hitung",
+                    "mean": "Arti",
+                    "average": "Rata-rata"
+                },
+                "code": {
+                    "ok": "Ok",
+                    "notfound": "Tidak ditemukan",
+                    "servererror": "Server Error"
+                }
+            }
+        },
+        "servicesstats": {
+            "title": "Services statistics (time in millisecond)",
+            "table": {
+                "name": "Service name",
+                "count": "Count",
+                "mean": "Mean",
+                "min": "Min",
+                "max": "Max",
+                "p50": "p50",
+                "p75": "p75",
+                "p95": "p95",
+                "p99": "p99"
+            }
+        },
+        "ehcache": {
+            "title": "Ehcache statistics",
+            "cachename": "Cache name",
+            "objects": "Objects",
+            "hits": "Hits",
+            "misses": "Misses",
+            "evictioncount": "Eviction count",
+            "mean": "Mean get time (ms)"
+        },
+        "datasource": {
+        	"usage": "Usage",
+            "title": "DataSource statistics (time in millisecond)",
+            "name": "Pool usage",
+            "count": "Count",
+            "mean": "Mean",
+            "min": "Min",
+            "max": "Max",
+            "p50": "p50",
+            "p75": "p75",
+            "p95": "p95",
+            "p99": "p99"
+        }
+    }
+}

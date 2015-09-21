@@ -1,0 +1,20 @@
+{
+    "coreApp": {
+        "author" : {
+            "home": {
+                "title": "Penulis",
+                "createLabel": "Buat Penulis Baru",
+                "createOrEditLabel": "Membuat atau mengedit Penulis"
+            },
+            "delete": {
+                "question": "Apakah Anda yakin ingin menghapus Penulis{{ id }}?"
+            },
+            "detail": {
+                "title": "Author"
+            },
+            "name": "Name",
+            "birthDate": "BirthDate",
+            "book": "book"
+        }
+    }
+}

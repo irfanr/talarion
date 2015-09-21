@@ -1,0 +1,32 @@
+{
+    "settings": {
+        "title": "Pengaturan pengguna untuk [<b>{{username}}</b>]",
+        "form": {
+            "firstname": "Nama Depan",
+            "firstname.placeholder": "Nama Depan Anda",
+            "lastname": "Nama Belakang",
+            "lastname.placeholder": "Nama Belakang Anda",
+            "language": "Bahasa",
+            "button": "Simpan"
+        },
+        "messages": {
+            "error": {
+                "fail": "<strong>Sebuah kesalahan telah terjadi!</strong> Settings tidak bisa diselamatkan!.",
+                "emailexists": "<strong>E-mail sudah digunakan !</strong> Silahkan PIlih Yang Lain."
+            },
+            "success": "<strong>Pengaturan Disimpan!</strong>",
+            "validate": {
+                "firstname": {
+                    "required": "Nama pertama Anda diperlukan.",
+                    "minlength": "Nama pertama Anda diperlukan untuk setidaknya 1 karakter",
+                    "maxlength": "Nama pertama Anda tidak boleh lebih dari 50 karakter"
+                },
+                "lastname": {
+                    "required": "Nama pertama Anda diperlukan.",
+                    "minlength": "Nama pertama Anda diperlukan untuk setidaknya 1 karakter",
+                    "maxlength": "Nama pertama Anda tidak boleh lebih dari 50 karakter"
+                }
+            }
+        }
+    }
+}

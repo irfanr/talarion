@@ -1,0 +1,18 @@
+{
+    "login": {
+        "title": "Authentication",
+        "form": {
+            "password": "Password",
+            "password.placeholder": "password",
+            "rememberme": "Login otomatis",
+            "button": "Authenticate"
+        },
+        "messages": {
+            "error": {
+      "authentication": "<strong> Otentikasi gagal </ strong> Periksa kredensial Anda dan coba lagi!."            }
+        },
+        "password" : {
+            "forgot": "Apakah Anda lupa password Anda?"
+        }
+    }
+}

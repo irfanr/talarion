@@ -1,0 +1,100 @@
+{
+    "global": {
+        "title": "ACS",
+        "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+        "menu": {
+            "home": "Home",
+            "entities": {
+                "main": "Entities",
+                "author": "Author",
+                "book": "Book",
+                "additionalEntity": "JHipster akan menambahkan entitas tambahan di sini (tidak menerjemahkan!)"
+            },
+            "account": {
+                "main": "Account",
+                "settings": "Settings",
+                "password": "Password",
+                "sessions": "Sessions",
+                "login": "Authenticate",
+                "logout": "Log out",
+                "register": "Register"
+            },
+            "admin": {
+                "main": "Administration",
+                "tracker": "User tracker",
+                "metrics": "Metrics",
+                "health": "Health",
+                "configuration": "Configuration",
+                "logs": "Logs",
+                "audits": "Audits",
+                "apidocs": "API",
+                "database": "Database"
+            },
+            "language": "Language"
+        },
+        "form": {
+            "username": "Login",
+            "username.placeholder": "login",
+            "newpassword": "Kata sandi baru",
+            "newpassword.placeholder": "Kata sandi baru",
+            "confirmpassword": "Konfirmasi password baru",
+            "confirmpassword.placeholder": "Konfirmasi password baru",
+            "email": "E-mail",
+            "email.placeholder": "e-mail"
+        },
+        "messages": {
+            "info": {
+                "authenticated": "Apabila Anda ingin  <a href=\"#/login\">login</a>, Anda dapat menggunakan default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
+                "register": " Apabila Anda ingin membuat account baru , gunakan <a href=\"#/register\">Registrasi Account baru</a>"
+            },
+            "error": {
+                "dontmatch" : "Password dan konfirmasinya tidak cocok!"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "password Anda diperlukan.",
+                     "minlength": "password Anda diperlukan untuk setidaknya 5 karakter.",
+                     "maxlength": "password Anda tidak bisa lebih panjang dari 50 karakter.",
+                     "strength": "Kekuatan Password:"
+                },
+                "confirmpassword": {
+                   "required": "konfirmasi password Anda diperlukan.",
+                     "minlength": "konfirmasi password Anda diperlukan untuk setidaknya 5 karakter.",
+                     "maxlength": "konfirmasi password Anda tidak bisa lebih panjang dari 50 karakter."              },
+                "email": {
+                "required": "e-mail Anda diperlukan.",
+                     "invalid": "e-mail Anda tidak valid.",
+                     "minlength": "e-mail Anda diperlukan untuk setidaknya 5 karakter.",
+                     "maxlength": "e-mail Anda tidak boleh lebih dari 50 karakter."               }
+            }
+        }
+    },
+    "entity": {
+        "action": {
+            "back": "Back",
+            "cancel": "Cancel",
+            "delete": "Delete",
+            "edit": "Edit",
+            "save": "Save",
+            "view": "View"
+        },
+        "detail": {
+            "field": "Field",
+            "value": "Value"
+        },
+        "delete": {
+            "title": "Confirm delete operation"
+        },
+        "validation": {
+          "required": "Field ini harus di isi.",
+             "minlength": "Field ini diperlukan setidaknya {{min}} karakter.",
+             "maxlength": "Field ini tidak bisa lebih panjang dari {{max}} karakter.",
+             "min": "Field ini harus lebih dari {{min}}.",
+             "max": "Field ini tidak bisa lebih dari {{max}}.",
+             "pattern": "Field ini harus mengikuti pola {{}} pola.",
+             "number": "Field ini harus menjadi nomor satu.",
+             "datetimelocal": "Field ini harus menjadi tanggal dan waktu."
+        }
+    },
+    "footer": "This is your footer"
+}

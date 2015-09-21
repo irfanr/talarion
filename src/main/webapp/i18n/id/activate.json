@@ -1,0 +1,8 @@
+{
+    "activate": {
+        "title": "Activation",
+        "messages": {
+           "success": "<strong> pengguna telah diaktifkan </ strong> <a href=\"#/login\"> authenticate </a>..",
+             "error": "<strong> pengguna tidak dapat diaktifkan </ strong> Silahkan isi formulir pendaftaran untuk mendaftar.."        }
+    }
+}

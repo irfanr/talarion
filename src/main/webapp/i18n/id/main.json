@@ -1,0 +1,18 @@
+{
+    "main": {
+        "title": "A C S",
+        "subtitle": "Askrindo Core System",
+        "logged": {
+            "message": "Anda Login Sebagai user \"{{username}}\"."
+        },
+        "question": "Jika Anda memiliki pertanyaan:",
+        "link": {
+            "homepage": "JHipster homepage",
+            "stackoverflow": "JHipster on Stack Overflow",
+            "bugtracker": "JHipster bug tracker",
+            "contact": "contact @java_hipster on Twitter"
+        },
+        "like": "Jika Anda suka JHipster, jangan lupa untuk memberi kita sebuah bintang",
+        "github": "Github"
+    }
+}

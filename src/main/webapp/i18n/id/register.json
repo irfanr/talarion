@@ -1,0 +1,24 @@
+{
+    "register": {
+        "title": "Pendaftaran",
+        "form": {
+            "button": "Daftar"
+        },
+        "messages": {
+            "validate": {
+                "login": {
+                    "required": "login Anda diperlukan.",
+                    "minlength": "login Anda diperlukan untuk setidaknya 1 karakter",
+                    "maxlength": "login Anda dapat tidak boleh lebih dari 50 karakter",
+                    "pattern": "login Anda dapat hanya berisi huruf-huruf kecil dan angka"
+                }
+            },
+            "success": "<strong>Pendaftaran Disimpan!</strong> Silahkan Cek Email Anda Untuk Konfirmasi.",
+            "error": {
+                "fail": "<strong>Pendaftaran gagal </strong> Silakan coba lagi nanti.",
+                "userexists": "<strong> nama Login sudah terdaftar </strong> pilih yang lain!.",
+                "emailexists": "<strong> E-mail sudah digunakan </strong> pilih yang lain!."
+            }
+        }
+    }
+}

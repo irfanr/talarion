@@ -1,0 +1,11 @@
+{
+     "log": {
+         "title": "Log",
+         "nbloggers": "Ada {{jumlah}} pemasuk.",
+         "filter": "Filter",
+         "meja": {
+             "Nama": "Nama",
+             "level": "Level"
+         }
+     }
+}

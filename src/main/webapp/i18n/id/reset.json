@@ -1,0 +1,30 @@
+{
+    "reset": {
+        "request": {
+            "title": "Ganti kata kunci Anda",
+            "form": {
+                "button": "Ganti kata kunci"
+            },
+            "messages": {
+                "info": "Masukkan alamat e-mail Anda untuk mendaftar",
+                "success": "Periksa e-mail Anda untuk rincian tentang bagaimana untuk mereset password Anda",
+                "notfound": "<strong>alamat  E-Mail tidak terdaftar </ strong> Silakan periksa dan coba lagi!"
+
+            }
+
+        },
+        "finish" : {
+            "title": "Ganti kata Kunci",
+            "form": {
+                "button": "Validasi Kata Kunci baru"
+            },
+            "messages": {
+                "info": "Tulis Kata Kunci Baru",
+                "success": "<strong>kata sandi Anda telah dirubah.</strong> Silahkan<a href=\"#/login\">mengotentikasi</a>.",
+                "keymissing": "Kunci reset hilang.",
+                "error": "password Anda tidak bisa diatur ulang Ingat permintaan password hanya berlaku selama 24 jam."
+            }
+        }
+    }
+
+}

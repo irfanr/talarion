@@ -1,0 +1,22 @@
+{
+    "coreApp": {
+        "book" : {
+            "home": {
+                "title": "Books",
+                "createLabel": "Buat Bukur baru",
+                "createOrEditLabel": "Membuat atau mengedit Buku"
+            },
+            "delete": {
+                "question": "Apakah Anda yakin ingin menghapus Buku {{ id }}?"
+            },
+            "detail": {
+                "title": "Book"
+            },
+            "title": "Title",
+            "description": "Description",
+            "publicationDate": "PublicationDate",
+            "price": "Price",
+            "author": "author"
+        }
+    }
+}
