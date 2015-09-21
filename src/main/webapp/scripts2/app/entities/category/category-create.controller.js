@@ -8,16 +8,24 @@
 angular.module('talarionApp').controller('CategoryCreateController',
     function($scope, $state, $stateParams, Category, growl) {
 
+      $scope.submitted = false;
+
         $scope.category = {};
 
         $scope.create = function() {
 
-            Category.save($scope.category, function() {
-            	
-            	growl.info("Category successfully added ", {});
-            	
-                $state.go('category')
-            });
+            $scope.submitted = true;
+
+            if ($scope.createForm.$valid) {
+
+                Category.save($scope.category, function() {
+
+                    growl.info("Category successfully added ", {});
+
+                    $state.go('category')
+                });
+
+            }
 
         };
 

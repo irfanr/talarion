@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('talarionApp', ['LocalStorageModule', 'tmh.dynamicLocale',
-    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster', 'infinite-scroll','smart-table','ui.bootstrap','ngFileUpload','ng-currency','ngMask', 'angular-growl'])
+    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster', 'infinite-scroll','smart-table','ui.bootstrap','ngFileUpload','ng-currency','ngMask', 'angular-growl','ngMessages'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Auth, Principal, Language, ENV, VERSION) {
         $rootScope.ENV = ENV;
@@ -114,6 +114,6 @@ angular.module('talarionApp', ['LocalStorageModule', 'tmh.dynamicLocale',
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage();
         tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
-        
+
         growlProvider.globalTimeToLive(3000);
     });

@@ -23,33 +23,35 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <!-- Start horizontal form -->
+<!-- Start horizontal form -->
             <div class="panel rounded shadow">
-                <!-- /.panel-heading -->
+<!-- /.panel-heading -->
                 <div class="panel-body no-padding">
-                    <form class="form-horizontal mt-10" ng-submit="create()">
+                    <form class="form-horizontal mt-10" name="createForm" ng-submit="create()" novalidate>
                         <div class="form-body">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="id">Name</label>
-                                <div class="col-sm-7">
-                                    <input class="form-control" id="id" ng-model="category.name" required
-                                        type="text"/>
+                                <div class="col-sm-7" ng-class="{ 'has-error': submitted && createForm.name.$invalid }">
+                                    <input class="form-control" id="name" name="name" ng-model="category.name" required type="text"/>
+                                    <div ng-if="submitted" ng-messages="createForm.name.$error">
+                                        <div ng-messages-include="scripts2/components/messages/global-messages.html"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.form-body -->
+<!-- /.form-body -->
                         <div class="form-footer">
                             <div class="col-sm-offset-3">
                                 <button class="btn btn-success" type="submit">Create</button>
                             </div>
                         </div>
-                        <!-- /.form-footer -->
+<!-- /.form-footer -->
                     </form>
                 </div>
-                <!-- /.panel-body -->
+<!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
-            <!--/ End horizontal form -->
+<!-- /.panel -->
+<!--/ End horizontal form -->
         </div>
     </div>
 </div>
