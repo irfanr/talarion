@@ -29,9 +29,9 @@
                 <div class="panel-body no-padding">
                     <form class="form-horizontal mt-10" name="createForm" ng-submit="create()" novalidate>
                         <div class="form-body">
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error': submitted && createForm.name.$invalid }">
                                 <label class="col-sm-3 control-label" for="id">Name</label>
-                                <div class="col-sm-7" ng-class="{ 'has-error': submitted && createForm.name.$invalid }">
+                                <div class="col-sm-7">
                                     <input class="form-control" id="name" name="name" ng-model="category.name" required type="text"/>
                                     <div ng-if="submitted" ng-messages="createForm.name.$error">
                                         <div ng-messages-include="scripts2/components/messages/global-messages.html"></div>

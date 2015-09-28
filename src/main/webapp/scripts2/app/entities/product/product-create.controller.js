@@ -6,15 +6,27 @@
  * @description # ProductCreateController Controller of the talarionApp
  */
 angular.module('talarionApp').controller('ProductCreateController',
-    function($scope, $state, $stateParams, Product, Category, ParseLinks) {
+    function($scope, $state, $stateParams, Product, Category, ParseLinks, growl) {
+
+        $scope.submitted = false;
 
         $scope.product = {};
+        $scope.product.category = {};
 
         $scope.create = function() {
 
-            Product.save($scope.product, function() {
-                $state.go('product')
-            });
+            $scope.submitted = true;
+
+            if ($scope.createForm.$valid) {
+
+                Product.save($scope.product, function() {
+
+                    growl.info("Product successfully added ", {});
+
+                    $state.go('product')
+                });
+
+            }
 
         };
 
@@ -44,7 +56,7 @@ angular.module('talarionApp').controller('ProductCreateController',
             var nameSearchCrit = '';
 
             if (tableState.search.predicateObject != undefined) {
-              nameSearchCrit = tableState.search.predicateObject.name || '';
+                nameSearchCrit = tableState.search.predicateObject.name || '';
             }
 
             Category.query({

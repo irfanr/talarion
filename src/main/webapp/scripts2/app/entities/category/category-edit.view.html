@@ -27,15 +27,29 @@
             <div class="panel rounded shadow">
                 <!-- /.panel-heading -->
                 <div class="panel-body no-padding">
-                    <form name="editForm" class="form-horizontal mt-10" ng-submit="save()" novalidate>
+                    <form class="form-horizontal mt-10" name="editForm" ng-submit="save()" novalidate>
                         <div class="form-body">
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error': submitted && createForm.name.$invalid }">
                                 <label class="col-sm-3 control-label" for="id">Name</label>
-                                <div class="col-sm-7" ng-class="{ 'has-error': submitted && editForm.name.$invalid }">
-                                    <input class="form-control" id="name" name="name" ng-model="category.name" required type="text"/>
-                                    <div ng-if="submitted" ng-messages="editForm.name.$error">
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="name" name="name" ng-model="product.name" required type="text"/>
+                                    <div ng-if="submitted" ng-messages="createForm.name.$error">
                                         <div ng-messages-include="scripts2/components/messages/global-messages.html"></div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error': submitted && createForm.category-name.$invalid }">
+                                <label class="col-sm-3 control-label" for="categoryName">Category</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" id="categoryName" name="categoryName" ng-model="product.category.name" readonly required type="text">
+                                    <div ng-if="submitted" ng-messages="createForm.categoryName.$error">
+                                        <div ng-messages-include="scripts2/components/messages/global-messages.html"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-circle btn-default btn-stroke" id="lookupButton" ng-click="showLookup()" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
