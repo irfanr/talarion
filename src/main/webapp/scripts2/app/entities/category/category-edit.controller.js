@@ -8,6 +8,8 @@
 angular.module('talarionApp').controller('CategoryEditController',
     function($scope, $state, $stateParams, Category, growl) {
 
+        $scope.submitted = false;
+
         $scope.category = {};
 
         $scope.load = function(id) {
@@ -21,12 +23,18 @@ angular.module('talarionApp').controller('CategoryEditController',
 
         $scope.save = function() {
 
-          Category.update($scope.category, function() {
-        	  
-        	  growl.info("Category successfully edited ", {});
-        	  
-                $state.go('category')
-            });
+            $scope.submitted = true;
+
+            if ($scope.editForm.$valid) {
+
+                Category.update($scope.category, function() {
+
+                    growl.info("Category successfully edited ", {});
+
+                    $state.go('category')
+                });
+
+            }
 
         };
 
